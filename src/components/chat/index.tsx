@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Title from "@/components/chat/Title";
-import Content from "@/components/chat/Content";
+import Header from "@/components/chat/header/Header";
+import Content from "@/components/chat/content/Content";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 export const Chat = () => {
   return (
     <Wrapper>
-      <Title title={"test title"} />
+      <Header title={"test title"} />
       <Content />
     </Wrapper>
   );
