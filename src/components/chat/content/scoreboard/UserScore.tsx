@@ -4,6 +4,7 @@ import styled from "styled-components";
 type Props = {
   userName: string;
   score: number;
+  color: string;
 };
 
 const SIZE = {
@@ -40,6 +41,8 @@ const UserNameText = styled.span`
 
   display: flex;
   text-align: center;
+
+  color: ${(props) => props.color};
 `;
 
 const Score = styled.div`
@@ -53,22 +56,24 @@ const Score = styled.div`
   align-items: center;
 `;
 
-const ScoreText = styled.p`
+const ScoreText = styled.p<{ color: string }>`
   text-align: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
+
+  color: ${(props) => props.color};
 `;
 
-export const UserScore = ({ userName, score }: Props): JSX.Element => {
+export const UserScore = ({ userName, score, color }: Props): JSX.Element => {
   return (
     <Wrapper>
       <UserName>
-        <UserNameText>{userName}</UserNameText>
+        <UserNameText color={color}>{userName}</UserNameText>
       </UserName>
       <Score>
-        <ScoreText>{score}</ScoreText>
+        <ScoreText color={color}>{score}</ScoreText>
       </Score>
     </Wrapper>
   );
