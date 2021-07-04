@@ -1,7 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 
 import { Text, TextWrapper } from "@/components/chatting/content/message/Text";
+
+import { chattingReducer } from "@/reducers/chattingReducer";
+
+import type { Message as MessageType } from "@/types/chatting";
+
+type Props = {
+  playerName: string;
+  color: string;
+};
 
 const SIZE = {
   WIDTH: 525,
@@ -28,12 +37,7 @@ const Wrapper = styled.div`
   /* overflow-y: hidden; */
 `;
 
-type Message = {
-  playerName: string;
-  text: string;
-};
-
-const dummyMessage: Message[] = [
+const dummyMessage: MessageType[] = [
   { playerName: "일이삼", text: "안녕하세요" },
   { playerName: "일이삼사", text: "안녕하세요~" },
   {
@@ -43,19 +47,20 @@ const dummyMessage: Message[] = [
   },
 ];
 
-export const Message = (): JSX.Element => {
-  const [messages, setMessages] = useState<Message[]>([]);
+export const Message = ({ playerName, color }: Props): JSX.Element => {
+  const [state, dispatch] = useReducer(chattingReducer, { messages: [] });
 
   useEffect(() => {
-    setMessages(dummyMessage);
+    dispatch({ type: "init", payload: dummyMessage });
   }, []);
 
   return (
     <Wrapper>
-      {messages.map((message, index) => {
+      {state.messages.map((message, index) => {
         return (
           <TextWrapper key={index}>
-            <Text>{message.playerName}</Text> : <Text>{message.text}</Text>
+            <Text color={color}>{message.playerName}</Text> :{" "}
+            <Text>{message.text}</Text>
           </TextWrapper>
         );
       })}

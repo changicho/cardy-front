@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useReducer } from "react";
 import styled from "styled-components";
 
 import ScoreBoard from "@/components/chatting/content/scoreboard/ScoreBoard";
 import Message from "@/components/chatting/content/message/Message";
 import InputBar from "@/components/chatting/content/input/InputBar";
+
+import { userInfoReducer } from "@/reducers/userInfoReducer";
 
 const BORDER = {
   RADIUS: 25,
@@ -34,10 +36,18 @@ const Wrapper = styled.div`
 `;
 
 export const Content = (): JSX.Element => {
+  const [state, dispatch] = useReducer(userInfoReducer, {
+    userInfo: null,
+    roomId: null,
+    color: "gray",
+  });
+
+  const { userInfo, color } = state;
+
   return (
     <Wrapper>
       <ScoreBoard />
-      <Message />
+      <Message playerName={userInfo?.playerName || ""} color={color} />
       <InputBar />
     </Wrapper>
   );
