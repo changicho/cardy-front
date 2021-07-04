@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   border-bottom-right-radius: ${BORDER.RADIUS}px;
 `;
 
-export const Content = () => {
+export const Content = (): JSX.Element => {
   return (
     <Wrapper>
       <ScoreBoard />

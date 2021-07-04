@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   background: #7894ff;
 `;
 
-export const Base = () => {
+export const Base = (): JSX.Element => {
   return (
     <Wrapper>
       <Chatting />

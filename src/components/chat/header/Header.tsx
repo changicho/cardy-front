@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   border-top-right-radius: ${SIZE.BORDER_RADIUS}px;
 `;
 
-export const Header = ({ title }: Props) => {
+export const Header = ({ title }: Props): JSX.Element => {
   return (
     <Wrapper>
       <Title PADDING={PADDING}>{title}</Title>
