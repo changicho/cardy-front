@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Chatting from "@/components/chat/index";
+import Chatting from "@/components/chatting/Chatting";
 
 const Wrapper = styled.div`
   margin: 0px;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Header from "@/components/chat/header/Header";
-import Content from "@/components/chat/content/Content";
+import Header from "@/components/chatting/header/Header";
+import Content from "@/components/chatting/content/Content";
 
 const Wrapper = styled.div`
   width: 100%;

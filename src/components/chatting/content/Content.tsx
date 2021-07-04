@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import ScoreBoard from "@/components/chat/content/scoreboard/ScoreBoard";
-import Message from "@/components/chat/content/message/Message";
-import InputBar from "@/components/chat/content/input/InputBar";
+import ScoreBoard from "@/components/chatting/content/scoreboard/ScoreBoard";
+import Message from "@/components/chatting/content/message/Message";
+import InputBar from "@/components/chatting/content/input/InputBar";
 
 const BORDER = {
   RADIUS: 25,

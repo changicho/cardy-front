@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import UserScore from "@/components/chat/content/scoreboard/UserScore";
+import UserScore from "@/components/chatting/content/scoreboard/UserScore";
 import {
   RED,
   PINK,

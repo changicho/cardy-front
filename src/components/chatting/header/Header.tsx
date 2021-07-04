@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Title from "@/components/chat/header/Title";
-import MicIcon from "@/components/chat/header/MicIcon";
+import Title from "@/components/chatting/header/Title";
+import MicIcon from "@/components/chatting/header/MicIcon";
 
 type Props = {
   title: string;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { Text, TextWrapper } from "@/components/chat/content/message/Text";
+import { Text, TextWrapper } from "@/components/chatting/content/message/Text";
 
 const SIZE = {
   WIDTH: 525,
