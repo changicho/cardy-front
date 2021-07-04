@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Base from "@/components/base/Base";
 
-export const Router = () => {
+export const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Switch>
