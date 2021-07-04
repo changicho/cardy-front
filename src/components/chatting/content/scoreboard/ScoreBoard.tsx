@@ -38,18 +38,18 @@ const Wrapper = styled.div`
 `;
 
 type Score = {
-  userName: string;
+  playerName: string;
   score: number;
 };
 
 const dummyData = [
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
-  { userName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
+  { playerName: "hello", score: 10 },
 ];
 
 export const Content = (): JSX.Element => {
@@ -64,7 +64,7 @@ export const Content = (): JSX.Element => {
       {data.map((cur, index) => (
         <UserScore
           key={index}
-          userName={cur.userName}
+          playerName={cur.playerName}
           score={cur.score}
           color={colors[index]}
         />

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type Props = {
-  userName: string;
+  playerName: string;
   score: number;
   color: string;
 };
@@ -66,11 +66,11 @@ const ScoreText = styled.p<{ color: string }>`
   color: ${(props) => props.color};
 `;
 
-export const UserScore = ({ userName, score, color }: Props): JSX.Element => {
+export const UserScore = ({ playerName, score, color }: Props): JSX.Element => {
   return (
     <Wrapper>
       <UserName>
-        <UserNameText color={color}>{userName}</UserNameText>
+        <UserNameText color={color}>{playerName}</UserNameText>
       </UserName>
       <Score>
         <ScoreText color={color}>{score}</ScoreText>
