@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import ScoreBoard from "@/components/chat/content/scoreboard/ScoreBoard";
+import Message from "@/components/chat/content/message/Message";
+import InputBar from "@/components/chat/content/input/InputBar";
 
 const BORDER = {
   RADIUS: 25,
@@ -35,6 +37,8 @@ export const Content = (): JSX.Element => {
   return (
     <Wrapper>
       <ScoreBoard />
+      <Message />
+      <InputBar />
     </Wrapper>
   );
 };
