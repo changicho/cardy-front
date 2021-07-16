@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Title from "@/components/chatting/header/Title";
-import MicIcon from "@/components/chatting/header/MicIcon";
+import { MicIcon, MuteIcon } from "@/components/chatting/header/MicIcon";
 
 type Props = {
   title: string;
@@ -39,10 +39,12 @@ const Wrapper = styled.div`
 `;
 
 export const Header = ({ title }: Props): JSX.Element => {
+  const [canSpeak, setCanSpeak] = useState<boolean>(true);
+
   return (
     <Wrapper>
       <Title PADDING={PADDING}>{title}</Title>
-      <MicIcon />
+      {canSpeak ? <MicIcon /> : <MuteIcon />}
     </Wrapper>
   );
 };

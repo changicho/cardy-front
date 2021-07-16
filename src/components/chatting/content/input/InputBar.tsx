@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
+import activeButtonImage from "@/assets/image/send_active.png";
+import inActiveButtonImage from "@/assets/image/send_inactive.png";
+
 const SIZE = {
   WIDTH: 465,
   HEIGHT: 60,
@@ -50,21 +53,25 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.button<{ imageUrl: string }>`
   width: 35px;
   height: 35px;
 
   margin: 0 10px;
 
-  background-color: black;
+  background-color: transparent;
   border: none;
+
+  background-image: url(${(props) => props.imageUrl});
 `;
 
 export const InputBar = (): JSX.Element => {
+  const [isActive, setIsActive] = useState<boolean>(true);
+
   return (
     <Wrapper>
       <Input />
-      <Button />
+      <Button imageUrl={isActive ? activeButtonImage : inActiveButtonImage} />
     </Wrapper>
   );
 };
