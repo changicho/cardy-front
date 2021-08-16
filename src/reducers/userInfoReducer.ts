@@ -1,6 +1,6 @@
 import type { User as UserType } from "@/types/user";
 
-type State = {
+export type State = {
   userInfo: UserType | null;
   color: string;
   roomId: string | null;
@@ -23,7 +23,16 @@ type ActionSetUserInfo = {
 
 type Action = ActionSetRoomId | ActionSetUserInfo;
 
-export const userInfoReducer = (state: State, action: Action): State => {
+const initialState: State = {
+  userInfo: null,
+  color: "red",
+  roomId: null,
+};
+
+export const userInfoReducer = (
+  state: State = initialState,
+  action: Action
+): State => {
   switch (action.type) {
     case "set-room-info": {
       const newState = {
@@ -45,6 +54,6 @@ export const userInfoReducer = (state: State, action: Action): State => {
       return newState;
     }
     default:
-      throw new Error();
+      return state;
   }
 };

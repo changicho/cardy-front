@@ -1,6 +1,6 @@
 import type { Message as MessageType } from "@/types/chatting";
 
-type State = {
+export type State = {
   messages: MessageType[];
 };
 
@@ -21,7 +21,14 @@ type ActionInit = {
 
 type Action = ActionReceived | ActionSend | ActionInit;
 
-export const chattingReducer = (state: State, action: Action): State => {
+const initialState: State = {
+  messages: [],
+};
+
+export const chattingReducer = (
+  state: State = initialState,
+  action: Action
+): State => {
   switch (action.type) {
     case "received": {
       const newState = {
@@ -42,6 +49,6 @@ export const chattingReducer = (state: State, action: Action): State => {
       return newState;
     }
     default:
-      throw new Error();
+      return state;
   }
 };
